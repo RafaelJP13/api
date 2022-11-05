@@ -1,11 +1,22 @@
 import users from '../data/users.js'
 
 const isAdmin = (req, res, next) => {
-    const { callerId } = req.params;
+    
+    const { callerId } = req.body
+    console.log(req.body)
 
-    console.log(callerId)
+    // if(callerId && !isNaN(callerId)) 
 
-    next();
+    //     users.find(user => user.id === callerId)?.permissao === 'ADMIN' ? next() : res.send(401, "Não Autorizado!")
+     
+    // else{
+
+    //     res.send(400, 'O parâmetro callerId deve ser númerico!')
+    //     next()
+
+    // }
+    next()
+    
 }
 
 
