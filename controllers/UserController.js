@@ -16,7 +16,7 @@ const getUser = (req, res) => {
 
 const createUser = (req, res) => {
 
- 
+
 }
 
 const updateUser = (req, res) => {
