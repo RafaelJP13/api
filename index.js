@@ -1,12 +1,17 @@
 import express from 'express'
 import cors from 'cors'
 import isAdmin from './middleware/isAdmin.js'
+import RouteUsers from './routes/users.js'
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 app.use(cors());
 app.use(isAdmin);
+
+app.use('/users', RouteUsers)
+
+
 
 // let users = [
 //   {
