@@ -4,9 +4,12 @@ const isAdmin = (req, res, next) => {
     
     const { callerId } = req.body
 
-    callerId ?? users.find(user => user.id === callerId)?.permissao === 'ADMIN' ? next() : res.send(401, "Não Autorizado!")
-    
-}
+    if(!callerId) res.status(404).json({msg:'Informe o parametro callerId!'})
 
+    const user = users.find(user => user.id == callerId)
+    
+    user.permissao === 'ADMIN' ? next() : res.status(401).json({msg:"Não Autorizado!"})
+
+}
 
 export default isAdmin
