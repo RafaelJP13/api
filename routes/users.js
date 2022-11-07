@@ -5,9 +5,9 @@ import isAdmin from '../middleware/isAdmin.js'
 const router = express.Router()
 
 router.get('/', getUsers)
-router.get('/:userId', getUser)
-router.route('/').patch(isAdmin, updateUser)
+router.get('/:id', getUser)
 router.route('/').post(isAdmin, createUser)
-router.route('/').delete(isAdmin, deleteUser)
+router.route('/:id').patch(isAdmin, updateUser)
+router.route('/:id').delete(isAdmin, deleteUser)
 
 export default router
