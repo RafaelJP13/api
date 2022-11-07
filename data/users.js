@@ -1,6 +1,8 @@
+"use strict";
+
 let users = [
     {
-      id: 0o32165,
+      id: +'032165',
       nome: "Lucas",
       empresa: "Keller Williams",
       permissao: "ADMIN",
